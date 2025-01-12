@@ -1,0 +1,15 @@
+maintenance:
+  schedules:
+    cache_cleanup: 3600    # every hour
+    data_cleanup: 86400    # daily
+    optimization: 43200    # every 12 hours
+    
+  thresholds:
+    cache_size: 1000000    # maximum cache entries
+    memory_usage: 0.85     # maximum memory usage
+    batch_size: 5          # optimal batch size
+    
+  retention:
+    logs: 30              # days
+    summaries: 90         # days
+    cache: 7              # days

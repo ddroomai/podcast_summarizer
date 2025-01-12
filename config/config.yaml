@@ -1,0 +1,35 @@
+system:
+  model_version: "gpt-4"
+  max_tokens: 1000
+  temperature: 0.3
+
+processing:
+  chunk_size:
+    min: 400
+    max: 1000
+    optimal: 600
+  context_window: 3
+  similarity_threshold: 0.85
+
+quality:
+  min_quality_score: 0.8
+  required_checks:
+    - content_preservation
+    - technical_accuracy
+    - readability
+    - context_coherence
+  thresholds:
+    content_preservation: 0.8
+    technical_accuracy: 0.9
+    readability: 0.8
+    content_coherence: 0.8
+
+error_handling: 
+  max_retries: 3
+  retry_delay: 2
+  backoff_factor: 2
+
+logging:  # New section
+  level: INFO
+  file: "logs/summarizer.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

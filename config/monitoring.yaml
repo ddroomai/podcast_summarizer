@@ -1,0 +1,24 @@
+# Monitoring Configuration
+monitoring_config = {
+    'intervals': {
+        'metrics_collection': 60,  # seconds
+        'health_check': 300,       # seconds
+        'alert_check': 60          # seconds
+    },
+    
+    'thresholds': {
+        'max_processing_time': 300,  # seconds
+        'max_error_count': 10,
+        'max_memory_usage': 0.85,    # 85% of available memory
+        'min_success_rate': 0.95
+    },
+    
+    'alerts': {
+        'channels': ['email', 'slack']
+    },
+    
+    'logging': {
+        'level': 'INFO',
+        'retention_days': 30
+    }
+}       
